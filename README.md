@@ -8,4 +8,4 @@
 
 #####Steps to Run######
 1. cd <build-dir>
-2.  ./Storage
+2.  ./MatrixVector
