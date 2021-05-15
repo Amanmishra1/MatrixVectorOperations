@@ -2,19 +2,22 @@
 #define VECTOR_OPERATIONS_H
 
 #include <vector>
-#include <memory>
 #include <algorithm>
-#include <cctype>
 
 namespace vect
 {
     template <class T>
-    class VectorOperations
+    class VectorOperations final
     {
     private:
         std::vector<T> vect_elements_;
 
     public:
+        VectorOperations<T> &operator=(VectorOperations<T> const &other) = default;
+        VectorOperations<T>(VectorOperations<T> &&other) = default;
+        VectorOperations<T> &operator=(VectorOperations<T> &&other) = default;
+        ~VectorOperations<T>() = default;
+
         VectorOperations<T> operator+(const VectorOperations<T> &vect_elements);
         VectorOperations<T> operator*(T scalar_value);
         VectorOperations<T>(const std::vector<T> &);

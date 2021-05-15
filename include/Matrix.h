@@ -1,7 +1,6 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
-#include <vector>
 #include <VectorOperations.h>
 
 using namespace vect;
@@ -9,7 +8,7 @@ using namespace vect;
 namespace mat
 {
   template <class T>
-  class Matrix
+  class Matrix final
   {
   private:
     std::vector<std::vector<T>> matrix_;
@@ -17,6 +16,13 @@ namespace mat
     int cols_;
 
   public:
+    Matrix<T> &operator=(Matrix<T> const &other) = default;
+
+    Matrix<T>(Matrix<T> &&other) = default;
+    Matrix<T> &operator=(Matrix<T> &&other) = default;
+
+    ~Matrix<T>() = default;
+
     Matrix(int _rows, int _cols, const T &);
     Matrix(const Matrix<T> &);
 
