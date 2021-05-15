@@ -12,8 +12,8 @@ namespace mat
   {
   private:
     std::vector<std::vector<T>> matrix_;
-    int rows_;
-    int cols_;
+    int rows_{0};
+    int cols_{0};
 
   public:
     Matrix<T> &operator=(Matrix<T> const &other) = default;

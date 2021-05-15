@@ -5,9 +5,6 @@ project(MatrixVectorOperations)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
 
-enable_testing()
-add_subdirectory(googletest)
-
 set(HEADERS
   include/Matrix.h
   include/VectorOperations.h
@@ -30,5 +27,3 @@ add_executable(MatrixVectorExecutable main.cpp)
 target_link_libraries(MatrixVectorExecutable
 MatrixVectorOperations
 )
-
-add_subdirectory(test)

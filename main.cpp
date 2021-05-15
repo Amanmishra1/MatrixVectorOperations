@@ -98,7 +98,7 @@ int main(int argc, char **argv)
 
     //-------------------------------TEST - 8 matrix and vector multiplication -----------------------------------
 
-    Matrix<int> matrix8(4, 3, 10); //5 * 5 matrix with value 10
+    Matrix<int> matrix8(4, 3, 10); //4 * 3 matrix with value 10
     const std::vector<int> vector_multiply{10, 20, 30};
     VectorOperations<int> vect_multiply_obj(vector_multiply);
 

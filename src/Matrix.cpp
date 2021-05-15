@@ -28,9 +28,9 @@ Matrix<T> Matrix<T>::operator+(const Matrix<T> &matrix_obj)
 {
   Matrix result(rows_, cols_, 0);
 
-  for (int i = 0; i < rows_; i++)
+  for (auto i = 0; i < rows_; ++i)
   {
-    for (int j = 0; j < cols_; j++)
+    for (auto j = 0; j < cols_; ++j)
     {
       result(i, j) = this->matrix_[i][j] + matrix_obj(i, j);
     }
@@ -45,9 +45,9 @@ Matrix<T> Matrix<T>::operator+(const T &scalar_value)
 {
   Matrix result(rows_, cols_, 0);
 
-  for (int i = 0; i < rows_; i++)
+  for (auto i = 0; i < rows_; ++i)
   {
-    for (int j = 0; j < cols_; j++)
+    for (auto j = 0; j < cols_; ++j)
     {
       result(i, j) = this->matrix_[i][j] + scalar_value;
     }
@@ -62,9 +62,9 @@ Matrix<T> Matrix<T>::operator*(const T &scalar_value)
 {
   Matrix result(rows_, cols_, 0);
 
-  for (int i = 0; i < rows_; i++)
+  for (auto i = 0; i < rows_; ++i)
   {
-    for (int j = 0; j < cols_; j++)
+    for (auto j = 0; j < cols_; ++j)
     {
       result(i, j) = this->matrix_[i][j] * scalar_value;
     }
@@ -84,9 +84,9 @@ std::vector<T> Matrix<T>::operator*(const VectorOperations<T> &vect_obj)
 
   std::vector<T> result(this->rows_, 0);
 
-  for (int i = 0; i < rows_; i++)
+  for (auto i = 0; i < rows_; ++i)
   {
-    for (int j = 0; j < cols_; j++)
+    for (auto j = 0; j < cols_; ++j)
     {
       result[i] = result[i] + this->matrix_[i][j] * vect_elements[j];
     }
@@ -126,9 +126,9 @@ int Matrix<T>::get_cols() const
 template <class T>
 void Matrix<T>::print_matrix()
 {
-  for (int i = 0; i < this->get_rows(); i++)
+  for (auto i = 0; i < this->get_rows(); ++i)
   {
-    for (int j = 0; j < this->get_cols(); j++)
+    for (auto j = 0; j < this->get_cols(); ++j)
     {
       std::cout << matrix_[i][j] << ", ";
     }
