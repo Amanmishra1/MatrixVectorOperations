@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 
     VectorOperations<float> obj_vect6;
     obj_vect6 = obj_vect4 + obj_vect5;
-    std::cout << "Vector addition: type float::" << std::endl;
+    std::cout << "Vector addition: type float" << std::endl;
     obj_vect6.print_vector();
 
     //-------------------------------------TEST - 3------------------------------
@@ -49,7 +49,7 @@ int main(int argc, char **argv)
 
     VectorOperations<int> obj_vect8;
     obj_vect8 = obj_vect7 * scalar_value;
-    std::cout << "Vector multiplication with scalar value: type int::" << std::endl;
+    std::cout << "Vector multiplication with scalar value: type int" << std::endl;
     obj_vect8.print_vector();
 
     //-------------------------------------TEST - 4------------------------------
@@ -63,7 +63,7 @@ int main(int argc, char **argv)
 
     VectorOperations<float> obj_vect10;
     obj_vect10 = obj_vect9 * float_value;
-    std::cout << "Vector multiplication with scalar value: type float::" << std::endl;
+    std::cout << "Vector multiplication with scalar value: type float" << std::endl;
     obj_vect10.print_vector();
 
     std::cout << std::endl;

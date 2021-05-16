@@ -24,15 +24,22 @@ template <class T>
 VectorOperations<T> VectorOperations<T>::operator+(const VectorOperations<T> &vect_obj2)
 {
     VectorOperations<T> vect_addition;
+    try
+    {
+        if (this->vect_elements_.size() != vect_obj2.vect_elements_.size())
+            throw std::length_error("vectors must be same size to add");
 
-    if (this->vect_elements_.size() != vect_obj2.vect_elements_.size())
-        throw std::length_error("vectors must be same size to add");
+        //resize the vector to match size of input data
+        vect_addition.vect_elements_.resize(vect_obj2.vect_elements_.size());
 
-    //resize the vector to match size of input data
-    vect_addition.vect_elements_.resize(vect_obj2.vect_elements_.size());
-
-    std::transform(vect_obj2.vect_elements_.begin(), vect_obj2.vect_elements_.end(),
-                   this->vect_elements_.begin(), vect_addition.vect_elements_.begin(), std::plus<T>());
+        std::transform(vect_obj2.vect_elements_.begin(), vect_obj2.vect_elements_.end(),
+                       this->vect_elements_.begin(), vect_addition.vect_elements_.begin(), std::plus<T>());
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() << std::endl;
+        exit(EXIT_FAILURE);
+    }
 
     return vect_addition;
 }
